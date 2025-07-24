@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+// App Name - Logo Font
+.app-name-nav-bar {
+  font-size: x-large; /* ~20px */
+}
+.app-logo-nav-bar {
+  @apply h-10;
+}
+.navbar-normal-text{
+  @apply text-xl;
+}
+.navbar-icon{
+  @apply h-5;
+}
+
+@media (min-width: 640px) {
+  .app-name-nav-bar {
+    font-size: xx-large; /* ~24px */
+  }
+  .app-logo-nav-bar {
+    @apply h-15;
+  }
+  .navbar-normal-text{
+    @apply text-xl;
+  }
+  .navbar-icon{
+    @apply h-10;
+  }
+}
+@media (min-width: 768px) {
+  .app-name-nav-bar {
+    font-size: xxx-large; /* ~30px */
+  }
+  .app-logo-nav-bar {
+    @apply h-20;
+  }
+  .navbar-normal-text{
+    @apply text-3xl;
+  }
+  .navbar-icon{
+    @apply h-10;
+  }
+}
+
+/* You can add global styles to this file, and also import other style files */
