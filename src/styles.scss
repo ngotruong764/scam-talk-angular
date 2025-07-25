@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 // App Name - Logo Font
 .app-name-nav-bar {
@@ -14,19 +16,25 @@
 .navbar-icon{
   @apply h-5;
 }
+.flag-icon{
+  @apply h-12 w-12 rounded-full me-2;
+}
 
 @media (min-width: 640px) {
   .app-name-nav-bar {
     font-size: xx-large; /* ~24px */
   }
   .app-logo-nav-bar {
-    @apply h-15;
+    @apply h-10;
   }
   .navbar-normal-text{
     @apply text-xl;
   }
   .navbar-icon{
     @apply h-10;
+  }
+  .flag-icon{
+    @apply h-12 w-12 rounded-full me-2;
   }
 }
 @media (min-width: 768px) {
@@ -41,6 +49,9 @@
   }
   .navbar-icon{
     @apply h-10;
+  }
+  .flag-icon{
+    @apply h-12 w-12 rounded-xl me-2;
   }
 }
 
