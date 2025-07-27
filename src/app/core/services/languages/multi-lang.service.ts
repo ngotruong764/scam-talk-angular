@@ -1,6 +1,6 @@
 import {effect, inject, Injectable, signal} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
-import {LANGUAGES} from "../../const/languages";
+import {LANGUAGES} from "../../../const/languages";
 
 
 @Injectable({

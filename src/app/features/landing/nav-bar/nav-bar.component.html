@@ -1,14 +1,14 @@
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
+<nav class="bg-primary-60 border-gray-200 dark:bg-primary-10">
   <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
     <!-- App Logo -->
     <a href="https://flowbite.com/" class=" flex items-center space-x-3 rtl:space-x-reverse">
       <img src="assets/app_logo/scam_talk_logo_dark_mode.png" class="app-logo-nav-bar" alt="Scam Talk Logo"/>
-      <span class="app-name-nav-bar self-center font-semibold whitespace-nowrap dark:text-white">Scam Talk</span>
+      <span class="app-name-nav-bar self-center font-semibold whitespace-nowrap text-white">Scam Talk</span>
     </a>
     <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse text-2xl">
       <!-- Change Theme Mode Button -->
-      <button type="button">
-        <img src="assets/icon/sun.svg" alt="Sun Icon" class="navbar-icon">
+      <button type="button" class = "transition-transform hover:scale-110 align-middle" (click)="onToggleThemeMode()">
+        <img [src]="themeModeIcon" alt="Theme Mode Icon" class="navbar-icon">
         <span class="sr-only">Change Theme Mode</span>
       </button>
       <!-- Change Language Dropdown -->
@@ -58,27 +58,22 @@
     <div class="navbar-normal-text items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
          id="navbar-language">
       <ul
-        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        class="text-white flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
         <li>
-          <a href="#"
-             class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+          <a href="#" class="nav-bar-nav-link"
              aria-current="page">Home</a>
         </li>
         <li>
-          <a href="#"
-             class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+          <a href="#" class="nav-bar-nav-link">About</a>
         </li>
         <li>
-          <a href="#"
-             class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+          <a href="#" class="nav-bar-nav-link">Services</a>
         </li>
         <li>
-          <a href="#"
-             class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
+          <a href="#" class="nav-bar-nav-link">Pricing</a>
         </li>
         <li>
-          <a href="#"
-             class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+          <a href="#" class="nav-bar-nav-link">Contact</a>
         </li>
       </ul>
     </div>

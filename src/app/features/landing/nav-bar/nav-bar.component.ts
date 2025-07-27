@@ -1,14 +1,16 @@
-import {Component, HostListener, inject} from '@angular/core';
+import {Component, effect, HostBinding, HostListener, inject, signal} from '@angular/core';
 import {CommonModule, NgClass} from "@angular/common";
-import {MultiLangService} from "../../../core/services/multi-lang.service";
+import {MultiLangService} from "../../../core/services/languages/multi-lang.service";
 import {TranslateModule} from "@ngx-translate/core";
 import {LANGUAGES} from "../../../const/languages";
+import {MatButtonToggle} from "@angular/material/button-toggle";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
   imports: [
-    NgClass, TranslateModule, CommonModule
+    NgClass, TranslateModule, CommonModule, MatButtonToggle, MatButton
   ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
@@ -22,6 +24,15 @@ export class NavBarComponent {
   public multiLangService = inject(MultiLangService);
 
   public isLangDropdownOpen: boolean = false;
+  protected isDarkMode = signal<boolean>(
+    JSON.parse(window.localStorage.getItem('darkMode') || 'false')
+  );
+
+  constructor() {
+    effect(() => {
+      window.localStorage.setItem('darkMode', JSON.stringify(this.isDarkMode()));
+    });
+  }
 
   /**
    * Toggles the language dropdown and updates the language
@@ -45,5 +56,25 @@ export class NavBarComponent {
     if (!clickedInsideDropdown) {
       this.isLangDropdownOpen = false;
     }
+  }
+
+  @HostBinding('class.dark') get mode() {
+    return this.isDarkMode();
+  }
+
+  /**
+   * Toggles the theme mode
+   * */
+  onToggleThemeMode(): void {
+    this.isDarkMode.set(!this.isDarkMode());
+  }
+
+  get themeModeIcon():string {
+    const path = 'assets/icon/';
+    let iconPath = path+'sun.svg';
+    if (!this.isDarkMode()) {
+      iconPath = path+'moon.svg';
+    }
+    return iconPath;
   }
 }
