@@ -28,6 +28,8 @@ export class NavBarComponent {
     JSON.parse(window.localStorage.getItem('darkMode') || 'false')
   );
 
+  public isLandingPage = signal<boolean>(true);
+
   constructor() {
     effect(() => {
       window.localStorage.setItem('darkMode', JSON.stringify(this.isDarkMode()));
@@ -76,5 +78,10 @@ export class NavBarComponent {
       iconPath = path+'moon.svg';
     }
     return iconPath;
+  }
+
+  // Navigate to the Authentication page
+  onNavigateToAuth(): void {
+    this.isLandingPage.set(false);
   }
 }
